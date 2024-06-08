@@ -33,3 +33,27 @@ export const getProduct = async(req, res)=>{
       res.json({message: err.message});
     }
   };
+
+  //actualizar producto
+
+  export const updateProduct = async(req, res)=>{
+    try{
+      const id = req.params.id;
+      await ProductModel.updateOne({_id:id}, req.body).then( res => {
+        console.log(res);
+      })
+      res.status(200).json({"message":"Producto actualizado con exito!"});
+    }catch(err){
+      res.json({messagge: err.message});
+    }
+  };
+  
+  // Eliminar un producto
+  export const deleteProduct = async(req, res) => {
+    try{
+      const id = req.params.id;
+      await ProductModel.deleteOne({_id:id}).then(res=>{console.log(res)});
+    }catch(err){
+      res.json({message: err.message});
+    }
+  };

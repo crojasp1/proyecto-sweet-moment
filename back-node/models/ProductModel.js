@@ -12,3 +12,4 @@ const ProductSchema = new Schema(
 );
 
 export default mongoose.model('ProductModel', ProductSchema);
+
