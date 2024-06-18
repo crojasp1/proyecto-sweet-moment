@@ -1,0 +1,61 @@
+
+.hero{
+  width: 100%;
+  height: 600px;
+  background-image: url(../Assests/heroBackImage.jpg), linear-gradient(to top, black, rgb(204, 8, 106));
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: flex;
+  position: relative;
+}
+.hero-left{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+align-items: center;
+  line-height: 1.1;
+
+
+  & h2{
+    font-size: 2.6rem;
+    color: white;
+    font-weight: 600;
+
+  }
+  & p{
+    font-size: 6rem;
+    font-weight: 700;
+    color: white;
+
+  }
+}
+.hand-hand-icon{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  & img{
+    width: 105px;
+  }
+}
+.hero-latest-btn{
+  width: 310px;
+  height: 70px;
+  border-radius: 75px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:15px;
+  background-color: #ff4141;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 500;
+
+  & img{
+    width: 60px;
+  }
+}
