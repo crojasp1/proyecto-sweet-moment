@@ -1,25 +1,28 @@
 import React from "react";
 import "./Hero.css";
 import heroBackImage from "../Assests/heroBackImage.jpg";
-import heroArrow from "../Assests/heroArrow.png";
-import heroHand from "../Assests/heroHand.png";
+import right_arrow from '../Assests/right_arrow.png';
+import domi_lush from "../Assests/domi_lush.png";
 
 const Hero = () => {
   return (
     <div className="hero">
       <div className="hero-left">
+
         <h2>NEW ARRIVALS ONLY</h2>
+        <img src={domi_lush} alt="Lush and domi image" />
+
         <div>
-          <div className="hand-hand-icon">
-            <p>New</p>
-            <img src={heroHand} alt="Hand greeting icon" />
+          <div className="new-product-icon">
+            <p>Here all</p>
+
           </div>
-          <p>Collections</p>
-          <p>For Everyone</p>
+          <p>New</p>
+          <p> For U</p>
         </div>
         <div className="hero-latest-btn">
           <div>Lastest Collection</div>
-          <img src={heroArrow} alt="Arrow icon" />
+          <img src={right_arrow} alt="Right Arrow icon" />
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
 .hero{
   width: 100%;
   height: 600px;
-  background-image: url(../Assests/heroBackImage.jpg), linear-gradient(to top, black, rgb(204, 8, 106));
+  background-image: url(../Assests/heroBackImage.jpg), linear-gradient(to top, black, #cc086a);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -12,10 +12,11 @@
 .hero-left{
   flex: 1;
   display: flex;
+  text-align: center;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-align-items: center;
+  align-items: center;
   line-height: 1.1;
 
 
@@ -23,22 +24,28 @@ align-items: center;
     font-size: 2.6rem;
     color: white;
     font-weight: 600;
-
+    top: 50px;
+    position: absolute;
   }
   & p{
     font-size: 6rem;
     font-weight: 700;
-    color: white;
-
+    color: black;
+  }
+  & img{
+    width: 115px;
   }
 }
-.hand-hand-icon{
+
+
+.new-product-icon{
   display: flex;
   align-items: center;
   gap: 15px;
 
+
   & img{
-    width: 105px;
+    width: 115px;
   }
 }
 .hero-latest-btn{
@@ -52,10 +59,11 @@ align-items: center;
   gap:15px;
   background-color: #ff4141;
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 500;
 
   & img{
-    width: 60px;
+    width: 30px;
+    color: white;
   }
 }

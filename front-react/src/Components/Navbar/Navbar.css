@@ -19,7 +19,7 @@
   border-radius: 50%;
 }
 .nav-logo p{
-  color: #17171717;
+  color: black;
   font-size: 38px;
   font-weight: 600;
 
@@ -95,5 +95,9 @@
   font-size: 14px;
   background: red;
   color:white;
+}
+
+.nav-link:hover{
+  transform: scale(1.1);
 }
 
