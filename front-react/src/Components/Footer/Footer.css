@@ -5,11 +5,17 @@
   align-items: center;
   gap: 50px;
 }
-.footer-log{
+.footer-logo{
   display: flex;
   align-items: center;
   gap: 20px;
 }
+.footer-logo img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
 .footer-logo p{
   color: #383838;
   font-size: 4.6rem;
@@ -25,7 +31,7 @@
 .footer-links li{
   cursor: pointer;
 }
-.footer-social-icon{
+.footer-socials-icon{
   display: flex;
   gap:20px
 }
@@ -34,6 +40,11 @@
   padding-bottom: 6px;
   background: #fbfbfb;
   border: 1px solid #ebebeb;
+}
+.footer-icons-container img{
+  width: 30px;
+  height: 30px;
+  
 }
 .footer-copyright{
   display: flex;

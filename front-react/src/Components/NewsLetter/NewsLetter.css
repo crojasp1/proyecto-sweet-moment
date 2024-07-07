@@ -1,13 +1,13 @@
-.newsletter div{
-  width: 65%;
-  height: 40vh;
+.newsletter {
+  width: 90%;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: auto;
   padding: 0px 140px;
-  margin-bottom: 150px;
+  margin-bottom: 70px;
   background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
   gap: 30px;
 }
@@ -16,7 +16,7 @@
   color: #454545;
   font-size: 55px;
   font-weight: 600;
-
+  text-align: center;
 }
 
 .newsletter p{
@@ -45,11 +45,11 @@
 }
 
 .newsletter div button{
-  width: 210px;
+  width: 190px;
   height: 70px;
   border-radius: 80px;
   background: black;
   color: white;
-  font-size: 1.6px;
+  font-size: 16px;
   cursor: pointer;
 }
