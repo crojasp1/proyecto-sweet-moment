@@ -22,6 +22,14 @@ app.get("/", (req, res) => {
   res.send("Aplicación Express esta funcionando");
 });
 
+app.listen(port, (error) => {
+  if (!error) {
+    console.log("Conectado al puerto: " + port);
+  } else {
+    console.log("Error: " + error);
+  }
+});
+
 //Image Storage Engine
 const storage = multer.diskStorage({
   destination: "./upload/images",
@@ -83,6 +91,7 @@ const Product = mongoose.model("Product", {
   },
 });
 
+//Creando punto de acceso para agregar un solo producto
 app.post("/addproduct", async (req, res) => {
   let products = await Product.find({});
   let id;
@@ -128,10 +137,4 @@ app.get("/allproducts", async (req, res) => {
   res.send(products);
 });
 
-app.listen(port, (error) => {
-  if (!error) {
-    console.log("Conectado al puerto: " + port);
-  } else {
-    console.log("Error: " + error);
-  }
-});
+

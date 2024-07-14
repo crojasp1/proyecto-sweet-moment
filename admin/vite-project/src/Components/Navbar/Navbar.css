@@ -1,0 +1,35 @@
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 60px;
+  box-shadow: 0 1px 3px 2px #000;
+  margin-bottom: 1px;
+  background: white;
+  }
+
+.navbar-left-logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.navbar-logoTitle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  & h2{
+    font-size: 1.6rem;
+  }
+
+  & p{
+    position: absolute;
+    font-size: 0.8rem;
+  }
+}
+.navbar-left-logo img{
+  width: 60px;
+  height: 60px;
+  margin-right: 3px;
+  border-radius: 80%;
+}
