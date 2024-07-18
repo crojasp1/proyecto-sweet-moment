@@ -85,10 +85,4 @@
     color: white;
     cursor: pointer;
 }
-.cartitems-total{
-    flex: 1; I
-    display: flex;
-    flex-direction: column;
-    margin-right: 200px;
-    gap: 40px;
-}
+
