@@ -1,35 +1,30 @@
 import React, {createContext, useState} from "react";
-import all_products from "../Components/Assests/all_products";
+import all_products from "../Components/Assests/all_products.jsx";
 
+//1. Creamos el contexto con createContext();
 export const ShopContext = createContext(null);
 
 const getDefaultCart = () =>{
   let cart = {};
-<<<<<<< HEAD
-  for (let index = 0; index < all_products+1; index++){
-=======
-  for (let index = 0; index < all_products.lenght+1; index++){
->>>>>>> admin-camiloRojasDev
+  for (let index = 0; index < all_products.length+1; index++){
     cart[index] = 0;
   }
   return cart;
 }
 
+//2. Creamos el proveedor del contexto (Componentes hijos mediante ShopContextProvider)
 const ShopContextProvider = (props) => {
   
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
   const addToCart = (itemId) => {
-      setCartItems((prev) => ({...prev,[itemId]:prev[itemId]+1}))
+  setCartItems((prev) => ({...prev,[itemId]:prev[itemId]+1}))
   }
 
   const removeFromCart = (itemId) => {
-    setCartItems((prev) => ({...prev, [itemId]:prev[itemId]}))
+  setCartItems((prev) => ({...prev, [itemId]:prev[itemId]-1}))
   }
 
-<<<<<<< HEAD
-  const contextValue = {all_products};
-=======
   const getTotalCartAmount = () => {
     let totalAmount = 0;
     for(const item in cartItems)
@@ -55,8 +50,9 @@ const ShopContextProvider = (props) => {
     return totalItem;
   }
 
-  const contextValue = {getTotalCartItems,getTotalCartAmount,all_products,cartItems,addToCart,removeFromCart};
->>>>>>> admin-camiloRojasDev
+  //Valores del contexto:
+
+  const contextValue = {getTotalCartItems, getTotalCartAmount, all_products, cartItems,addToCart,removeFromCart};
  
 
   return(

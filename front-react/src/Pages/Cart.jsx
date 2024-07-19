@@ -1,13 +1,10 @@
 import React from 'react'
-<<<<<<< HEAD
-=======
-import CartItems from "../Components/CartItems/CartItems";
->>>>>>> admin-camiloRojasDev
+import CartItems  from '../Components/CartItems/CartItems'
 
 const Cart = () => {
   return (
     <div>
-      
+      <CartItems/>
     </div>
   )
 }
