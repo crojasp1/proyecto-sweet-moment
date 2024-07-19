@@ -4,6 +4,7 @@ import all_products from "../Components/Assests/all_products.jsx";
 //1. Creamos el contexto con createContext();
 export const ShopContext = createContext(null);
 
+//Obtenemos la cantidad de productos por default a mostrar
 const getDefaultCart = () =>{
   let cart = {};
   for (let index = 0; index < all_products.length+1; index++){
@@ -18,7 +19,7 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
   const addToCart = (itemId) => {
-  setCartItems((prev) => ({...prev,[itemId]:prev[itemId]+1}))
+  setCartItems((prev) => ({...prev, [itemId]:prev[itemId]+1}))
   }
 
   const removeFromCart = (itemId) => {
