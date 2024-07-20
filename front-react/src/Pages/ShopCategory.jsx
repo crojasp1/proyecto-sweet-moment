@@ -3,6 +3,8 @@ import "./CSS/ShopCategory.css"
 import { ShopContext } from '../Context/ShopContext';
 import Item from '../Components/Item/item';
 import all_products from "../Components/Assests/all_products";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowDown} from "@fortawesome/free-solid-svg-icons";
 
 const ShopCategory = (props) => {
   const {all_products} = useContext(ShopContext);
@@ -14,7 +16,7 @@ const ShopCategory = (props) => {
           <span>Showing 1-12</span> out of 36 products
         </p>
         <div className="shopcategory-sort">
-          Ordenar por <span><i class="fa-solid fa-arrow-turn-down"></i></span>
+          Ordenar por <span><FontAwesomeIcon icon={faArrowDown}/></span>
         </div>
       </div>
       <div className='shopcategory-products'>

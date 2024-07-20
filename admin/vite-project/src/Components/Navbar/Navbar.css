@@ -33,3 +33,13 @@
   margin-right: 3px;
   border-radius: 80%;
 }
+.navbar-profileImg{
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.navbar-profileContainer{
+  display: flex;
+  align-items: center;
+}
