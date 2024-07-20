@@ -1,9 +1,11 @@
-import React from 'react';
-import "./productdisplay.css";
-
+import React, { useContext } from 'react';
+import './productdisplay.css';
+import { ShopContext } from '../../Context/ShopContext';
 
 const ProductDisplay = (props) => {
-    const {product} = props;
+  const { product } = props;
+  const { addToCart } = useContext(ShopContext); // Importar la función del contexto
+
   return (
     <div className='productdisplay'>
       <div className="productdisplay-left">
@@ -12,7 +14,6 @@ const ProductDisplay = (props) => {
           <img src={product.image} alt="Product image" />
           <img src={product.image} alt="Product image" />
           <img src={product.image} alt="Product image" />
-          
         </div>
         <div className="productdisplay-img">
           <img className='productdisplay-main-img' src={product.image} alt="" />
@@ -21,11 +22,11 @@ const ProductDisplay = (props) => {
       <div className="productdisplay-right">
         <h1>{product.name}</h1>
         <div className="productdisplay-right-star">
-          <span><i class="fa-solid fa-star"></i></span>
-          <span><i class="fa-solid fa-star"></i></span>
-          <span><i class="fa-solid fa-star"></i></span>
-          <span><i class="fa-solid fa-star"></i></span>
-          <span><i class="fa-regular fa-star"></i></span>
+          <span><i className="fa-solid fa-star"></i></span>
+          <span><i className="fa-solid fa-star"></i></span>
+          <span><i className="fa-solid fa-star"></i></span>
+          <span><i className="fa-solid fa-star"></i></span>
+          <span><i className="fa-regular fa-star"></i></span>
           <p>122</p>
         </div>
         <div className="productdisplay-right-prices">
@@ -33,9 +34,9 @@ const ProductDisplay = (props) => {
           <div className="productdisplay-right-price-new">${product.new_price}</div>
         </div>
         <div className="productdisplay-right-description">
-            Talla única 
-            Media liguero lisa con encaje y banda de silicona para agarre Perfecto a tu pierna.  
-            Color : Negra, blanca o roja 
+          Talla única 
+          Media liguero lisa con encaje y banda de silicona para agarre Perfecto a tu pierna.  
+          Color : Negra, blanca o roja 
         </div>
         <div className="productdisplay-right-size">
           <h1>Seleccionar talla</h1>
@@ -43,11 +44,11 @@ const ProductDisplay = (props) => {
             <div>Talla unica</div>
           </div>
         </div>
-        <button>ADD TO CART</button>
+        <button onClick={() => addToCart(product.id)}>ADD TO CART</button> {/* Llamar a la función con el ID del producto */}
         <p className='productdisplay-right-category'><span>Category:</span>Lenceria</p>
       </div> 
     </div>
   )
 }
 
-export default ProductDisplay
+export default ProductDisplay;
