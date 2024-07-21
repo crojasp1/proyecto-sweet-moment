@@ -9,6 +9,7 @@ import product_5 from "../Assests/all_products/Plug_anal.jpeg";
 import lenceriaMonja from "./product_1.jpg";
 import lenceriaColegiala from "./product_2.jpeg";
 import lenceriaMaravilla from "./product_3.jpg";
+import lenceriaEnfermera from "./product_4.jpeg";
 
 //Lubricantes
 import lubricante1 from "./product_images/Durex.jpeg";
@@ -93,6 +94,14 @@ let all_products = [
     name:"Colegiala",
     category: "lenceria",
     image: lenceriaColegiala,
+    new_price:50.000,
+    old_price:80.500,
+  },
+  {
+    id: 11,
+    name:"Enfermera",
+    category: "lenceria",
+    image: lenceriaEnfermera,
     new_price:50.000,
     old_price:80.500,
   },
