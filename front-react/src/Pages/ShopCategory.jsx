@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
-import "./CSS/ShopCategory.css";  // Importa los estilos CSS específicos para este componente.
-import { ShopContext } from '../Context/ShopContext';  // Importa el contexto que proporciona datos de la tienda.
-import Item from '../Components/Item/item';  // Importa el componente Item para mostrar los productos.
-import all_products from "../Components/Assests/all_products";  // Importa la lista de todos los productos.
+import "./CSS/ShopCategory.css"
+import { ShopContext } from '../Context/ShopContext';
+import Item from '../Components/Item/item';
+import all_products from "../Components/Assests/all_products";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowDown} from "@fortawesome/free-solid-svg-icons";
 
 const ShopCategory = (props) => {
   // Usa el hook useContext para acceder a los datos del contexto ShopContext.
@@ -20,8 +22,7 @@ const ShopCategory = (props) => {
           <span>Showing 1-12</span> out of 36 products
         </p>
         <div className="shopcategory-sort">
-          {/* Opción para ordenar los productos */}
-          Ordenar por <span><i className="fa-solid fa-arrow-turn-down"></i></span>
+          Ordenar por <span><FontAwesomeIcon icon={faArrowDown}/></span>
         </div>
       </div>
 
