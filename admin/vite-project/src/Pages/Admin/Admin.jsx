@@ -3,7 +3,7 @@ import './Admin.css'
 import Sidebar from '../../Components/Sidebar/Sidebar';
 import { Routes, Route } from 'react-router-dom';
 import Addproduct from '../../Components/Addproduct/Addproduct';
-import Listproduct from '../../Components/Listproduct/Listproduct';
+import Listproduct from '../../Components/ListProduct/ListProduct';
 
 const Admin = () => {
   return (

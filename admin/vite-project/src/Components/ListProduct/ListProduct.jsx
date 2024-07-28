@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './ListProduct.css'
-import cross_icon from '../../assets/cross_icone.png'
+import cross_icon from '../../../../../front-react/src/Components/Assests/cart_cross_icon.png'
+
 const ListProduct = () => {
 
     const [allproducts,setAllProducts] = useState([]);
@@ -38,7 +39,7 @@ const ListProduct = () => {
       </div>
       <div className="listproduct-allproducts">
         <hr />
-        {llprodcts.map((product,index)=>{
+        {allproducts.map((product,index)=>{
             return <>
             <div key={index} className="listproduct-format-main listproduct-format">
                <img src={product.image} alt="" className="list-product-product-icon" />
