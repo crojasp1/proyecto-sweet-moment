@@ -58,7 +58,7 @@
 
 }
 .nav-cart-image:hover{
-  scale: 1.2;
+  transform:scale(1.2) ;
   transition: 1s ease;
 }
 .nav-login-cart button{

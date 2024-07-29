@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import './ListProduct.css'
 import cross_icon from '../../../../../front-react/src/Components/Assests/cart_cross_icon.png'
 
@@ -44,7 +44,7 @@ const ListProduct = () => {
             <div key={index} className="listproduct-format-main listproduct-format">
                <img src={product.image} alt="" className="list-product-product-icon" />
                <p>{product.name}</p>
-               <p>${product.ald_price}</p>
+               <p>${product.old_price}</p>
                <p>${product.new_price}</p>
                <p>{product.category}</p>
                <img onClick={()=>{remove_product(product.id)}} className='listproduct-remove-icon' src={cross_icon} alt="" />

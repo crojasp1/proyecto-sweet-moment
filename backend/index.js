@@ -78,8 +78,8 @@ const Product = mongoose.model("Product", {
    
   },
   old_price: {
-    Nombre: String,
-  
+    type: Number,
+
   },
   date: {
     type: Date,
@@ -159,19 +159,19 @@ const Users = mongoose.model('Users',{
   }
 })
 
-//Creating Edpoint for refistring the user
-app.post('/singup',async (req,res)=>{
+//Creating Endpoint for registering the user
+app.post('/signup',async (req,res)=>{
 
   let check = await Users.findOne({email:req.body.email});
   if (check) {
-    return res.status(400).json({success:false,errors:"existing user found with same email address"})
+    return res.status(400).json({success:false,errors:"Usuario encontrado con el mismo email"});
   }
   let cart = {};
   for (let i = 0; i < 300; i++) {
     cart[i]=0;
   }
   const user = new Users({
-    name:req.body.uusername,
+    name:req.body.username,
     email:req.body.email,
     password:req.body.password,
     cartData:cart,
@@ -185,7 +185,41 @@ app.post('/singup',async (req,res)=>{
     }
   }
 
-  const token = jwt.sing(data, 'secret_ecom');
+  const token = jwt.sign(data, 'secret_ecom');
   res.json({success:true,token})
 
 })
+
+//Creando endPoint para el registro del usuario
+
+app.post('/login', async (req,res) =>{
+  let user = await Users.findOne({email:req.body.email});
+  if (user) {
+    const passCompare = req.body.password === user.password;
+    if (passCompare){
+      const data = {
+        user:{
+          id:user.id
+        }
+      }
+      const token = jwt.sign(data, 'secret_ecom');
+      res.json({success:true, token})
+    }
+    else{
+      res.json({success:false, errors:"Contraseña equivocada"})
+    }
+  }
+  else{
+    res.json({success:false, errors:"Email equivocado"});
+  }
+})
+
+// API para obtener los productos mostrados en la pagina de inicio
+
+app.get("/newcollections", async (req, res) => {
+  let products = await Product.find({});
+  let newcollection = products.slice(1).slice(-8);
+  console.log("Nueva colección obtenida");
+  res.send(newcollection);
+})
+
