@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './ListProduct.css'
 import cross_icon from '../../../../../front-react/src/Components/Assests/cart_cross_icon.png'
+
 const ListProduct = () => {
 
     const [allproducts,setAllProducts] = useState([]);
