@@ -78,8 +78,8 @@ const Product = mongoose.model("Product", {
    
   },
   old_price: {
-    Nombre: String,
-  
+    type: Number,
+
   },
   date: {
     type: Date,
@@ -212,5 +212,14 @@ app.post('/login', async (req,res) =>{
   else{
     res.json({success:false, errors:"Email equivocado"});
   }
+})
+
+// API para obtener los productos mostrados en la pagina de inicio
+
+app.get("/newcollections", async (req, res) => {
+  let products = await Product.find({});
+  let newcollection = products.slice(1).slice(-8);
+  console.log("Nueva colección obtenida");
+  res.send(newcollection);
 })
 
