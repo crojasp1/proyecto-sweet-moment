@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react";
-import all_products from "../Components/Assests/all_products.jsx";
+import { useEffect } from "react";
+
 
 // 1. Creamos el contexto con createContext();
 export const ShopContext = createContext(null);
@@ -8,7 +9,7 @@ export const ShopContext = createContext(null);
 const getDefaultCart = () => {
   let cart = {};
   // Inicializamos el carrito con la cantidad de productos disponibles (por defecto en 0)
-  for (let index = 0; index < all_products.length + 1; index++) {
+  for (let index = 0; index < 300 + 1; index++) {
     cart[index] = 0;
   }
   return cart;
@@ -19,6 +20,15 @@ const ShopContextProvider = (props) => {
   
   // Estado para mantener los ítems del carrito
   const [cartItems, setCartItems] = useState(getDefaultCart());
+
+  // Almacenador de todos los productos
+  const [all_products, setAll_Products] = useState([]);
+
+  useEffect(()=>{
+    fetch('http://localhost:4000/allproducts')
+    .then((response)=>response.json())
+    .then((data)=>setAll_Products(data));
+  },[])
 
   // Función para añadir un producto al carrito
   const addToCart = (itemId) => {
