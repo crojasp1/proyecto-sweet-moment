@@ -223,3 +223,58 @@ app.get("/newcollections", async (req, res) => {
   res.send(newcollection);
 })
 
+// Creando endpoint para Popular
+
+app.get("/popularinlenceria", async (req, res) => {
+  let products = await Product.find({category:"lenceria"});
+  let popular_in_lenceria = products.slice(0,4);
+  console.log("Popular en lenceria");
+  res.send(popular_in_lenceria);
+  }
+  )
+
+    // Creando software intermedio para hacer fetch al usuario
+
+  const fetchUser = async (req, res, next) => {
+    const token = req.header('auth-token');
+    if (!token) {
+      res.status(401).send({errors:"Porfavor autentique usando un token valido"})
+
+    }else{
+      try{
+        const data = jwt.verify(token,'secret_ecom');
+        req.user = data.user;
+        next();
+      }catch (error) {
+        res.status(401).send({errors:"Porfavor autentique usando un token valido"});
+      }
+    }
+  }
+
+  // Creando Endpoint para agregar productor en cartData
+
+  app.post('/addtocart', fetchUser, async (req,res) => {
+    console.log("added", req.body.itemId);
+    let userData = await Users.findOne({_id:req.user.id});
+    userData.cartData[req.body.itemId] +=1;
+    await Users.findOneAndUpdate({_id:req.user.id},{cartData:userData.cartData});
+    res.send("Added");
+  })
+
+// Creando endpoint para eliminar productos del cartData
+  app.post('/removefromcart', fetchUser, async (req, res) =>{
+    console.log("removed", req.body.itemId);
+    let userData = await Users.findOne({_id:req.user.id});
+    if(userData.cartData[req.body.itemId]>0)
+    userData.cartData[req.body.itemId] -=1;
+    await Users.findOneAndUpdate({_id:req.user.id},{cartData:userData.cartData});
+    res.send("removed");
+  })
+
+  // Creando endpoint para obtener informacion de cartData (Persistencia del carrito)
+
+  app.post('/getcart', fetchUser, async (req, res) => {
+    console.log("Get Cart")
+    let userData = await Users.findOne({_id:req. user.id});
+    res.json(userData.cartData);
+  })

@@ -1,10 +1,20 @@
 import React from 'react';
 import './Popular.css';
-import data_product from '../Assests/data';
+
 import Item from '../Item/item';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 // Componente funcional Popular
 const Popular = () => {
+  const [popularProducts, setPopularProducts] = useState([]);
+
+  useEffect(() =>{
+    fetch("http://localhost:4000/popularinlenceria")
+    .then((response)=>response.json())
+    .then(data => setPopularProducts(data))
+  },[]);
+
   return (
     // Contenedor principal de la sección de productos populares
     <div className='popular'>
@@ -17,7 +27,7 @@ const Popular = () => {
       <div className="popular-item">
         
         {/* Mapeo de datos de productos para renderizar ítems */}
-        {data_product.map((item, i) => {
+        {popularProducts.map((item, i) => {
           return (
             <Item 
               key={i} 

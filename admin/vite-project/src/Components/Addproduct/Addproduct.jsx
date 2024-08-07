@@ -22,6 +22,7 @@ const Addproduct = () => {
   const changeHandler = (event) => {
     setProductDetails({...productDetails, [event.target.name]:event.target.value});
     console.log(event);
+
   }
 
   const Add_Product = async () => {
@@ -54,22 +55,26 @@ const Addproduct = () => {
         data.success?alert('Product Added'):alert('Added Failed');
       })
     }
+    document.querySelector(".itemfield-input").value = "";
+    document.querySelector(".itemfield-input2").value = "";
+    document.querySelector(".itemfield-input3").value = "";
+
   }
 
   return (
     <div className='add-product'>
       <div className="addproduct-itemfield">
         <p>Nombre del producto</p>
-        <input value={productDetails.name} onChange={changeHandler} type="text" name='name' placeholder='Escriba aqui' />
+        <input className='itemfield-input' value={productDetails.name} onChange={changeHandler} type="text" name='name' placeholder='Escriba aqui' />
       </div>
       <div className="addproduct-price">
         <div className="addproduct-itemfield">
           <p>Precio</p>
-          <input value={productDetails.old_product} onChange={changeHandler} type="text" name="old_price" placeholder='Escriba aqui' />
+          <input className='itemfield-input2' value={productDetails.old_product} onChange={changeHandler} type="text" name="old_price" placeholder='Escriba aqui' />
         </div>
         <div className="addproduct-itemfield">
           <p>Establezca nuevo precio</p>
-          <input value={productDetails.new_price} onChange={changeHandler} type="text" name="new_price" placeholder='Escriba aqui' />
+          <input className='itemfield-input3' value={productDetails.new_price} onChange={changeHandler} type="text" name="new_price" placeholder='Escriba aqui' />
         </div>
       </div>
       <div className="addproduct-itemfield">
@@ -81,7 +86,7 @@ const Addproduct = () => {
         </select>
       </div>
       <div className="addproduct-itemfield">
-        <label htmlFor="file-input">
+        <label className='itemfield-imagen' htmlFor="file-input">
           {image? <img src={URL.createObjectURL(image)} className='addproduct-thumnail-img' alt="Uploaded image" /> :<FontAwesomeIcon icon={faCloudArrowUp} className='addproduct-thumnail-img'/>}
         </label>
         <input onChange={imageHandler} type="file" name='image' id='file-input' hidden />

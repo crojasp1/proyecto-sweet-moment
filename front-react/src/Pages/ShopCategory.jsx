@@ -42,7 +42,7 @@ const ShopCategory = (props) => {
 
       {/* Botón para explorar más productos */}
       <div className="shopcategory-loadmore">
-        Explore More
+        Explore Más
       </div>
     </div>
   )
