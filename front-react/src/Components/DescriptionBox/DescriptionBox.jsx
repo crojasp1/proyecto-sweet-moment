@@ -9,15 +9,16 @@ const DescriptionBox = () => {
       
       {/* Navegador dentro del cuadro de descripción */}
       <div className="descriptionbox-navigator">
-        
-        {/* Caja de navegación con la etiqueta "Descripción" */}
-        <div className="descriptionbox-nav-box">
-          Descripción
-        </div>
-        
-        {/* Caja de navegación con la etiqueta "Vistas (122)" */}
-        <div className="description-nav-box fade">
-          Vistas (122)
+        <div className='descriptionbox-navigator-flex'>
+          {/* Caja de navegación con la etiqueta "Descripción" */}
+          <div className="descriptionbox-nav-box">
+            Descripción
+          </div>
+          
+          {/* Caja de navegación con la etiqueta "Vistas (122)" */}
+          <div className="description-nav-box-fade">
+            Vistas (122)
+          </div>
         </div>
         
         {/* Contenedor para la descripción del sitio web de comercio electrónico */}

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { ShopContext } from "../../Context/ShopContext";
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import logo from '../Assests/logo.jpeg';
@@ -10,6 +11,9 @@ const Navbar = () => {
 
   // Estado para el menú seleccionado
   const [menu, setMenu] = useState("shop");
+
+  //Traemos el getTotalCartItems del contexto
+  const {getTotalCartItems} = useContext(ShopContext);
 
   return (
     // Contenedor principal de la barra de navegación
@@ -52,11 +56,10 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faCartShopping}/>
           </span>
         </Link>
-        <div className="nav-cart-count">0</div>
+        <div className="nav-cart-count">{getTotalCartItems()}</div>
       </div>
     </div>
   )
 }
 
 export default Navbar;
-
