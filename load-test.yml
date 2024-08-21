@@ -1,0 +1,14 @@
+config:
+  target: 'http://localhost:4000'  # URL base de tu servidor Express
+  phases:
+    - duration: 60  # Duración de la prueba en segundos
+      arrivalRate: 20  # Número de usuarios simulados que llegan por segundo
+  defaults:
+    headers:
+      content-type: application/json  # Tipo de contenido para las solicitudes
+
+scenarios:
+  - name: "Carga de productos"
+    flow:
+      - get:
+          url: "/allproducts"  # Endpoint para obtener todos los productos

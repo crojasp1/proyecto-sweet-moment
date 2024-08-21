@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 
 // 1. Creamos el contexto con createContext();
-export const ShopContext = createContext(null);
+export const ShopContext = createContext({});
 
 // Función para obtener el carrito de compras por defecto
 const getDefaultCart = () => {

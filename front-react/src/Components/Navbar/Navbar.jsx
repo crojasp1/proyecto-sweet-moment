@@ -13,7 +13,7 @@ const Navbar = () => {
   const [menu, setMenu] = useState("shop");
 
   //Traemos el getTotalCartItems del contexto
-  const {getTotalCartItems} = useContext(ShopContext);
+  const {getTotalCartItems = () => 0} = useContext(ShopContext);
 
   return (
     // Contenedor principal de la barra de navegación

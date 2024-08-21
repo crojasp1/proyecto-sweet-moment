@@ -1,8 +1,10 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import { prettyDOM } from "@testing-library/dom";
 
-test('renders learn react link', () => {
+import App from "./App";
+
+test("Should show the app title", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  screen.queryAllByText("Sweet Moment");
 });

@@ -1,0 +1,33 @@
+config:
+  target: 'http://localhost:4000'
+  phases:
+    - duration: 60   # Fase 1: Warm-up
+      arrivalRate: 5 # 5 usuarios por segundo durante 60 segundos
+      name: "Warm-up"
+    - duration: 120  # Fase 2: Carga constante
+      arrivalRate: 20 # 20 usuarios por segundo durante 120 segundos
+      name: "Carga constante"
+    - duration: 60   # Fase 3: Pico de carga
+      arrivalRate: 50 # 50 usuarios por segundo durante 60 segundos
+      name: "Pico de carga"
+    - duration: 120  # Fase 4: Descenso gradual
+      arrivalRate: 10 # 10 usuarios por segundo durante 120 segundos
+      rampTo: 5      # Reducción gradual a 5 usuarios por segundo
+      name: "Descenso gradual"
+    - duration: 60   # Fase 5: Estabilización
+      arrivalRate: 5 # 5 usuarios por segundo durante 60 segundos
+      name: "Estabilización"
+
+scenarios:
+  - name: "Carga de productos"
+    flow:
+      - get:
+          url: "/allproducts"
+      - post:
+          url: "/addproduct"
+          json:
+            name: "Producto de prueba"
+            image: "/images/test.jpg"
+            category: "categoria_test"
+            new_price: 100
+            old_price: 150
