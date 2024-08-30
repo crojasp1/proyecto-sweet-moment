@@ -15,7 +15,7 @@ const Footer = () => {
 
       {/* Sección del logo de la tienda */}
       <div className="footer-logo">
-        <img src={sweetMoment_logo} alt="logo de la tienda" />
+        <img src={sweetMoment_logo} alt="logo de la tienda" loading='lazy' />
         <p>Sweet Moment</p>
       </div>
 
@@ -31,13 +31,13 @@ const Footer = () => {
       {/* Sección de iconos de redes sociales */}
       <div className="footer-socials-icon">
         <div className="footer-icons-container">
-          <img src={instagram_logo} alt="Instagram logo" />
+          <img src={instagram_logo} alt="Instagram logo" loading='lazy'/>
         </div>
         <div className="footer-icons-container">
-          <img src={face_logo} alt="Facebook logo" />
+          <img src={face_logo} alt="Facebook logo" loading='lazy' />
         </div>
         <div className="footer-icons-container">
-          <img src={x_logo} alt="Twitter logo" />
+          <img src={x_logo} alt="Twitter logo" loading='lazy' />
         </div>
       </div>
 
