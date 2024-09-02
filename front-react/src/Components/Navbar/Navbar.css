@@ -1,8 +1,17 @@
 /* Le colocamos diseño a nuestra barra de Navegación*/
+.header{
+  width: 100%;
+  position: absolute;
+  top: 0;
+
+}
 .navbar{
-  position: relative;
+  width: 100%;
+  position: fixed;
   display: flex;
   justify-content: space-around;
+  z-index: 100;
+  background-color: white;
   padding: 16px;
   box-shadow: 0 1px 3px black;
 
@@ -23,6 +32,18 @@
   font-size: 38px;
   font-weight: 600;
 
+}
+.navbar-menus{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  && input{
+    width: 50rem;
+    height: 4rem;
+    outline-color: #cc086a;
+  }
 }
 .nav-menu{
   display: flex;
@@ -95,6 +116,15 @@
   font-size: 14px;
   background: red;
   color:white;
+}
+.loginCart-icon{
+  width: 30px;
+  height: 30px;
+}
+
+.loginCart-icon:hover{
+
+  transform: scale(1.1);
 }
 
 .nav-link:hover{

@@ -1,5 +1,6 @@
 .cartitems{
-    margin: 100px 170px;
+    margin: 30px 170px;
+    padding-top: 120px;
 }
 .cartitems hr{
     height: 3px;

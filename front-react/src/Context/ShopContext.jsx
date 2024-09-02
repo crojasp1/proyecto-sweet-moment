@@ -24,6 +24,9 @@ const ShopContextProvider = (props) => {
   // Almacenador de todos los productos
   const [all_products, setAll_Products] = useState([]);
 
+  // Estado para buscar productos
+  const [searchProducts, setSearchProducts] = useState("");
+
   useEffect(()=>{
     fetch('http://localhost:4000/allproducts')
     .then((response)=>response.json())
@@ -111,6 +114,12 @@ const ShopContextProvider = (props) => {
     return totalItem;
   }
 
+  //Creando estado derivado para guardar filtros de los productos a mostrar
+  
+  const filtered_products = all_products.filter((products) => {
+    return products.name.toLowerCase().includes(searchProducts.toLocaleLowerCase());
+  });
+
   // Valores del contexto que se proporcionan a los componentes hijos
   const contextValue = {
     getTotalCartItems,
@@ -118,7 +127,10 @@ const ShopContextProvider = (props) => {
     all_products,
     cartItems,
     addToCart,
-    removeFromCart
+    removeFromCart,
+    filtered_products,
+    searchProducts,
+    setSearchProducts
   };
 
   return (

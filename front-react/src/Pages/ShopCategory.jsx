@@ -8,7 +8,7 @@ import {faArrowDown} from "@fortawesome/free-solid-svg-icons";
 
 const ShopCategory = (props) => {
   // Usa el hook useContext para acceder a los datos del contexto ShopContext.
-  const { all_products } = useContext(ShopContext);
+  const { all_products, filtered_products } = useContext(ShopContext);
 
   return (
     <div className='shop-category'>
@@ -28,7 +28,7 @@ const ShopCategory = (props) => {
 
       {/* Sección para mostrar los productos filtrados por la categoría */}
       <div className='shopcategory-products'>
-        {all_products.map((item, i) => {
+        {filtered_products.map((item, i) => {
           // Filtra los productos que coinciden con la categoría pasada como prop
           if (props.category === item.category) {
             // Renderiza un componente Item para cada producto de la categoría seleccionada
